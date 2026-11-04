@@ -17,5 +17,5 @@ window.SITE_CONFIG = {
   fingerprint: "97a566fc719fa740ee9a26f9bb151d349bd54b62f78619d5871f9038586a891f",
 
   // Как написать организатору: ссылка на Telegram или ВКонтакте. Можно оставить пустым.
-  contactUrl: "",
+  contactUrl: "https://t.me/dmrakov",
 };
