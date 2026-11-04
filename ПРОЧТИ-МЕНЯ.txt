@@ -29,5 +29,7 @@
    Пошаговые руководства лежат отдельно: basics.html (азбука для новичков),
    engineer.html, cook.html, builder.html и explorer.html. Шаги в них названы
    так же, как задания в книге квестов, — если поменяете квесты, поправьте и страницы.
+   graphics.html — текстуры и шейдеры по силе компьютера. Если уберёте с сервера
+   Faithful, MakeUp или Iris, поправьте и эту страницу.
 
 Шрифты Literata и Silkscreen — свободные (SIL Open Font License), лицензии лежат в папке fonts.

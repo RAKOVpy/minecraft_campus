@@ -429,6 +429,7 @@ kbd {
 .chapter .reading > li { margin: 0; padding: 12px 0 11px; border-bottom: 1px solid var(--rule); }
 .reading a { font-weight: 600; }
 .reading span { display: block; color: var(--ink-soft); font-size: 0.95em; }
+.reading span a { font-weight: inherit; }
 
 /* Таблица руд */
 .table-scroll { overflow-x: auto; margin: 1.2em 0; }
@@ -437,6 +438,27 @@ kbd {
 .ores thead th { font-weight: 600; border-bottom-color: var(--ink-soft); }
 .ores td:nth-child(2) { font-variant-numeric: tabular-nums; }
 .ores td:last-child { color: var(--ink-soft); }
+
+/* Графика: что включить на каком компьютере. Квадратики — насколько нагружена видеокарта */
+.tiers { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-size: 0.97em; }
+.tiers th, .tiers td { text-align: left; vertical-align: top; padding: 14px 16px 13px 0; border-bottom: 1px solid var(--rule); }
+.tiers thead th { font-weight: 600; border-bottom-color: var(--ink-soft); }
+.tiers tbody th { font-weight: 400; width: 44%; }
+.tiers tbody th b { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1.06em; }
+.tiers tbody th > span { display: block; color: var(--ink-soft); font-size: 0.93em; margin-top: 2px; }
+.meter { display: inline-flex; gap: 3px; }
+.meter i { width: 8px; height: 8px; box-shadow: inset 0 0 0 1px #b59e70; }
+.meter i.on { background: var(--lantern-ink); box-shadow: none; }
+.chapter .keys + .tip { margin-top: 1.2em; }
+@media (max-width: 640px) {
+  .tiers thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .tiers, .tiers tbody, .tiers tr, .tiers th, .tiers td { display: block; width: auto; }
+  .tiers tr { padding: 14px 0 12px; border-bottom: 1px solid var(--rule); }
+  .tiers th, .tiers td { border: 0; padding: 0; }
+  .tiers tbody th { width: auto; margin-bottom: 8px; }
+  .tiers td { display: grid; grid-template-columns: 6.2em minmax(0, 1fr); gap: 10px; padding: 3px 0; }
+  .tiers td::before { content: attr(data-label); color: var(--ink-soft); }
+}
 
 /* Ссылки на руководства и на соседние дороги */
 .guides { list-style: none; margin: 1.2em 0 0; padding: 0 !important; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
