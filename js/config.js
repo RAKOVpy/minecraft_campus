@@ -10,8 +10,8 @@ window.SITE_CONFIG = {
   address: "campuscraft-mc.duckdns.org:7049",
 
   // Ссылка на архив с файлами игры (NeoForge + AutoModpack) — Яндекс Диск, Google Drive и т. п.
-  // Если оставить пустым, на сайте будет написано «ссылку пришлёт организатор».
-  archiveUrl: "",
+  // Если пересоберёте архив и ссылка изменится — замените её здесь.
+  archiveUrl: "https://disk.yandex.ru/d/u3g9zLs9I1AYvQ",
 
   // Отпечаток сертификата AutoModpack — игра покажет его при первом входе
   fingerprint: "97a566fc719fa740ee9a26f9bb151d349bd54b62f78619d5871f9038586a891f",
