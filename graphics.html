@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Графика — Наш сервер</title>
+  <meta name="description" content="Как сделать игру красивее и не потерять в скорости: что включить на слабом, среднем и мощном компьютере — текстуры Faithful 32x, шейдеры MakeUp и Complementary.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Графика">
+  <meta property="og:description" content="Текстуры и шейдеры по силе компьютера: что включить и как выключить обратно.">
+  <meta property="og:image" content="https://campuscraft.duckdns.org/img/og.png">
+  <meta name="theme-color" content="#17182a">
+  <link rel="icon" type="image/png" href="img/favicon-32.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="preload" href="fonts/literata-cyrillic-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html"><img class="pixel" src="img/favicon-32.png" alt="" width="28" height="28"><span data-config="name">Наш сервер</span></a>
+      <nav class="nav" aria-label="Разделы сайта">
+        <a href="index.html">О сервере</a>
+        <a href="join.html">Как зайти</a>
+        <a href="guide.html" aria-current="true">Обучение</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head page-head--road">
+      <div class="wrap">
+        <img class="page-head__plate pixel" src="img/graphics.png" alt="" width="176" height="176">
+        <div>
+          <p class="crumbs"><a href="guide.html">Обучение</a> / настройка</p>
+          <h1>Графика</h1>
+          <p class="lede">Сервер хорош и с обычными текстурами. Если компьютер тянет — включи чёткие текстуры или шейдеры: тени, тёплый свет на закате, небо в воде. Это видно только тебе, и всё выключается обратно.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap guide-layout">
+      <nav aria-label="Оглавление">
+        <details class="toc" open>
+          <summary>Оглавление</summary>
+          <ol>
+            <li><a href="#pick">Что выбрать</a></li>
+            <li><a href="#textures">Текстуры</a></li>
+            <li><a href="#shaders">Шейдеры</a></li>
+            <li><a href="#complementary">Для мощных компьютеров</a></li>
+            <li><a href="#trouble">Если стало тормозить</a></li>
+            <li><a href="#credits">Кто это сделал</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <article>
+        <section class="chapter" id="pick" aria-labelledby="pick-title">
+          <h2 id="pick-title">Что выбрать</h2>
+          <p>Сначала узнай, сколько кадров в секунду даёт твой компьютер без украшений. Зайди на сервер, встань там, где много построек, и нажми <kbd>F3</kbd>: слева вверху появится строка с числом <code>fps</code>. Ещё раз <kbd>F3</kbd> — и экран снова чистый.</p>
+          <table class="tiers">
+            <thead>
+              <tr><th scope="col">Компьютер</th><th scope="col">Текстуры</th><th scope="col">Шейдеры</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><b><span class="meter" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Слабый</b><span>Без украшений меньше 60 fps. Чаще всего это ноутбук со встроенной видеокартой.</span></th>
+                <td data-label="Текстуры">Обычные</td>
+                <td data-label="Шейдеры">Выключены</td>
+              </tr>
+              <tr>
+                <th scope="row"><b><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Средний</b><span>Без украшений 60–120 fps.</span></th>
+                <td data-label="Текстуры"><a href="#textures">Faithful 32x</a></td>
+                <td data-label="Шейдеры"><a href="#shaders">MakeUp – Ultra Fast</a></td>
+              </tr>
+              <tr>
+                <th scope="row"><b><span class="meter" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Мощный</b><span>Больше 120 fps. Обычно есть отдельная видеокарта.</span></th>
+                <td data-label="Текстуры"><a href="#textures">Faithful 32x</a> — по вкусу</td>
+                <td data-label="Шейдеры"><a href="#complementary">Complementary Reimagined</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Цифры примерные. Включил что-то — снова посмотри на <code>fps</code>: если стало меньше 40 и картинка дёргается, сделай шаг назад. Играть без украшений тоже совсем нормально: на игру они не влияют, только на то, как она выглядит.</p>
+        </section>
+
+        <section class="chapter" id="textures" aria-labelledby="textures-title">
+          <h2 id="textures-title">Текстуры</h2>
+          <p>Faithful 32x — те же привычные блоки Minecraft, только нарисованные в два раза подробнее. Привыкать не к чему: всё узнаётся сразу. Набор приходит вместе со сборкой, но выключен.</p>
+          <ol class="start-list">
+            <li><span>Открой «Настройки» → «Наборы ресурсов...». В игре до них можно добраться через <kbd>Esc</kbd>.</span></li>
+            <li><span>В левой колонке «Доступные» наведи мышь на Faithful 32x и нажми стрелку на его значке — набор переедет вправо, в «Выбранные».</span></li>
+            <li><span>Нажми «Готово» и подожди несколько секунд, пока игра перезагрузит текстуры.</span></li>
+          </ol>
+          <p class="tip">Faithful перерисовывает только обычный Minecraft: блоки и предметы из модов остаются прежними. Чтобы выключить, верни набор стрелкой влево.</p>
+        </section>
+
+        <section class="chapter" id="shaders" aria-labelledby="shaders-title">
+          <h2 id="shaders-title">Шейдеры</h2>
+          <p>Шейдеры меняют свет. Появляются тени от деревьев и домов, закат заливает всё тёплым, вода отражает небо, трава и листья колышутся на ветру. Работают они через мод Iris — он уже в сборке.</p>
+          <p>Вместе со сборкой приходит MakeUp – Ultra Fast — лёгкий набор: его автор добивается красивой картинки при небольшой нагрузке, а любой эффект в нём можно выключить отдельно.</p>
+          <ol class="start-list">
+            <li><span>Нажми <kbd>O</kbd> прямо в игре — откроется окно «Наборы шейдеров». Оно же есть в «Настройках графики...».</span></li>
+            <li><span>Выбери в списке MakeUp-UltraFast, проверь, что сверху написано «Шейдеры: Включены», и нажми «Применить».</span></li>
+            <li><span>Первое включение занимает несколько секунд — игра пересобирает картинку.</span></li>
+          </ol>
+          <dl class="keys">
+            <div><dt><kbd>O</kbd></dt><dd>Окно «Наборы шейдеров»: выбрать набор и открыть его настройки.</dd></div>
+            <div><dt><kbd>K</kbd></dt><dd>Включить и выключить шейдеры. Пригодится, если на общем празднике всё начало тормозить.</dd></div>
+            <div><dt><kbd>R</kbd></dt><dd>Перезагрузить шейдеры, если картинка сломалась.</dd></div>
+          </dl>
+          <p class="tip">Если с MakeUp тормозит, в том же окне нажми «Настройки набора шейдеров» и выключи тени — это самый тяжёлый эффект.</p>
+        </section>
+
+        <section class="chapter" id="complementary" aria-labelledby="complementary-title">
+          <h2 id="complementary-title">Для мощных компьютеров</h2>
+          <p>Complementary Reimagined — один из самых популярных наборов шейдеров: очень красивый и при этом хорошо оптимизированный. Его авторы не разрешают раздавать файл через сервер, поэтому скачай его сам — это пара минут.</p>
+          <ol class="start-list">
+            <li><span>Открой <a href="https://modrinth.com/shader/complementary-reimagined">Complementary Reimagined на Modrinth</a> и нажми Download. Выбери версию игры 1.21.1 и Iris — скачается zip-файл.</span></li>
+            <li><span>Не распаковывай его. Нажми в игре <kbd>O</kbd> и перетащи файл прямо в окно «Наборы шейдеров».</span></li>
+            <li><span>Выбери ComplementaryReimagined в списке и нажми «Применить».</span></li>
+            <li><span>Открой «Настройки набора шейдеров» → Profile. Сначала там стоит High. Если <code>fps</code> меньше 40 — опусти на Medium или Low, если запас большой — попробуй Very High.</span></li>
+          </ol>
+          <p class="tip">Если перетаскивание не сработало, нажми в том же окне «Папка с наборами» и положи файл туда.</p>
+        </section>
+
+        <section class="chapter" id="trouble" aria-labelledby="trouble-title">
+          <h2 id="trouble-title">Если стало тормозить</h2>
+          <div class="faq faq--inline">
+            <details>
+              <summary>Всё дёргается после включения шейдеров</summary>
+              <div><p>Нажми <kbd>K</kbd> — шейдеры выключатся сразу. Потом выбери набор полегче, опусти профиль или выключи тени. Ещё помогает прорисовка поменьше: 6–8 чанков в «Настройках графики...».</p></div>
+            </details>
+            <details>
+              <summary>Компьютер мощный, а fps низкий</summary>
+              <div><p>Если это ноутбук, подключи зарядку: от батареи он сам снижает мощность. Потом нажми <kbd>F3</kbd> и посмотри справа название видеокарты. Если там встроенная Intel или AMD Radeon Graphics, а в ноутбуке есть NVIDIA, игра запустилась не на той карте — напиши организатору, разберёмся вместе.</p></div>
+            </details>
+            <details>
+              <summary>Наборов нет в списке</summary>
+              <div><p>Faithful и MakeUp приходят со сборкой, когда заходишь на сервер. Зайди, дождись обновления и перезапусти игру — они появятся. Complementary в сборку не входит, его скачивают сами.</p></div>
+            </details>
+            <details>
+              <summary>Хочу другой набор</summary>
+              <div><p>Можно: его видишь только ты. Бери на Modrinth версию для 1.21.1 и добавляй так же — перетаскиванием в окно наборов.</p></div>
+            </details>
+          </div>
+        </section>
+
+        <section class="chapter" id="credits" aria-labelledby="credits-title">
+          <h2 id="credits-title">Кто это сделал</h2>
+          <p>Всё это бесплатно, и всё сделано людьми, которые любят Minecraft. Спасибо им.</p>
+          <ul class="reading">
+            <li><a href="https://faithfulpack.net/">Faithful 32x</a><span>Команда Faithful. Используется по <a href="https://faithfulpack.net/license">лицензии Faithful</a>.</span></li>
+            <li><a href="https://modrinth.com/shader/makeup-ultra-fast-shaders">MakeUp – Ultra Fast</a><span>Автор — javiergcim, лицензия LGPL-3.0, <a href="https://github.com/javiergcim/MakeUpUltraFast">исходный код</a>.</span></li>
+            <li><a href="https://modrinth.com/shader/complementary-reimagined">Complementary Reimagined</a><span>EminGT и Complementary Development. Каждый скачивает его сам, с Modrinth.</span></li>
+            <li><a href="https://modrinth.com/mod/iris">Iris</a> и <a href="https://modrinth.com/mod/sodium">Sodium</a><span>Моды, на которых держатся шейдеры и скорость игры.</span></li>
+            <li><a href="https://modrinth.com/mod/iris-flw-compat">Iris &amp; Flywheel Compat</a><span>Чтобы механизмы Create не тормозили вместе с шейдерами.</span></li>
+          </ul>
+          <h3>Дальше — своя дорога</h3>
+          <ul class="guides">
+            <li><a href="engineer.html"><img class="pixel" src="img/road-engineer.png" alt="" width="52" height="52"><b>Инженер</b><span>Механизмы и поезда</span></a></li>
+            <li><a href="cook.html"><img class="pixel" src="img/road-cook.png" alt="" width="52" height="52"><b>Фермер-повар</b><span>Огород, кухня, чай</span></a></li>
+            <li><a href="builder.html"><img class="pixel" src="img/road-builder.png" alt="" width="52" height="52"><b>Строитель</b><span>Дома, площадь, часовня</span></a></li>
+            <li><a href="explorer.html"><img class="pixel" src="img/road-explorer.png" alt="" width="52" height="52"><b>Исследователь</b><span>Рыбалка, Незер, Энд</span></a></li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <div>
+        <span data-config="name">Наш сервер</span>
+        <small>Неофициальный сервер Minecraft, не связан с Mojang и Microsoft. Картинки на сайте нарисованы специально для него.</small>
+      </div>
+      <nav class="nav" aria-label="Разделы сайта в подвале">
+        <a href="index.html">О сервере</a>
+        <a href="join.html">Как зайти</a>
+        <a href="guide.html">Обучение</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
