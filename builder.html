@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Строитель шаг за шагом — Наш сервер</title>
+  <meta name="description" content="Handcrafted, Supplementaries и моды Macaw’s по шагам: уютный дом, площадь, вокзал и мост для поезда, часовня с витражами и колоколом, главный зал.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Строитель шаг за шагом">
+  <meta property="og:description" content="От уютного дома до площади, вокзала и часовни.">
+  <meta property="og:image" content="img/og.png">
+  <meta name="theme-color" content="#17182a">
+  <link rel="icon" type="image/png" href="img/favicon-32.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="preload" href="fonts/literata-cyrillic-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html"><img class="pixel" src="img/favicon-32.png" alt="" width="28" height="28"><span data-config="name">Наш сервер</span></a>
+      <nav class="nav" aria-label="Разделы сайта">
+        <a href="index.html">О сервере</a>
+        <a href="join.html">Как зайти</a>
+        <a href="guide.html" aria-current="true">Обучение</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head page-head--road">
+      <div class="wrap">
+        <img class="page-head__plate pixel" src="img/road-builder.png" alt="" width="176" height="176">
+        <div>
+          <p class="crumbs"><a href="guide.html">Обучение</a> / пошаговое руководство</p>
+          <h1>Строитель</h1>
+          <p class="lede">Handcrafted, Supplementaries и моды Macaw’s по шагам: уютный дом, площадь с доской и часами, вокзал и мост для поезда, часовня с витражами и колоколом.</p>
+        </div>
+        <ol class="route" aria-label="Ступени дороги в книге квестов">
+          <li class="route__tier"><a href="#tier1"><span class="route__n">1</span><span class="route__name">Свой уютный дом</span><span class="route__when">открыта сразу</span></a></li>
+          <li class="route__gate"><a href="#gate1"><img class="pixel" src="img/gate-rod.png" alt="" width="64" height="48"><span>Ворота 1: огненный стержень</span></a></li>
+          <li class="route__tier"><a href="#tier2"><span class="route__n">2</span><span class="route__name">Площадь и вокзал</span><span class="route__when">после огненного стержня</span></a></li>
+          <li class="route__gate"><a href="#gate2"><img class="pixel" src="img/gate-star.png" alt="" width="60" height="44"><span>Ворота 2: визер</span></a></li>
+          <li class="route__tier"><a href="#tier3"><span class="route__n">3</span><span class="route__name">Часовня и зал</span><span class="route__when">после боя с визером</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="wrap guide-layout">
+      <nav aria-label="Оглавление">
+        <details class="toc" open>
+          <summary>Оглавление</summary>
+          <ol>
+            <li><a href="#basics">Как это устроено</a></li>
+            <li><a href="#tier1">Ступень 1. Свой уютный дом</a></li>
+            <li><a href="#tier2">Ступень 2. Площадь и вокзал</a></li>
+            <li><a href="#tier3">Ступень 3. Часовня и зал</a></li>
+            <li><a href="#craft">Как строить красивее</a></li>
+            <li><a href="#reading">Где почитать ещё</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <article>
+        <section class="chapter" id="basics" aria-labelledby="basics-title">
+          <h2 id="basics-title">Как это устроено</h2>
+          <p>У строителя нет одного главного мода — есть набор деталей, из которых складывается уют. Почти всё делается на обычном верстаке. Чтобы увидеть детали одного мода разом, набери в поиске списка предметов <code>@handcrafted</code>, <code>@supplementaries</code> или <code>@macaw</code>.</p>
+          <dl class="mods">
+            <div><dt>Handcrafted</dt><dd><p>Мебель: стулья, столы, скамейки, диваны, кровати, шкафы, полки.</p><p>Мебель из дубовых досок выходит дубовой, из еловых — еловой.</p></dd></div>
+            <div><dt>Supplementaries</dt><dd><p>Мелочи для жизни: баночки, мешки, подсвечники, цветочные ящики, указатели, часовой блок, информационная доска, деревянный каркас.</p></dd></div>
+            <div><dt>Macaw’s</dt><dd><p>Крыши, двери, окна, дорожки, мосты, люстры и фонари.</p><p>Шесть модов одного автора в одном стиле.</p></dd></div>
+            <div><dt>Ещё</dt><dd><p>Patterned Mosaics — узорное стекло и терракота для витражей, Immersive Paintings — свои картины, Copycats+ — блоки, которые принимают вид любого другого.</p></dd></div>
+          </dl>
+        </section>
+
+        <section class="chapter" id="tier1" aria-labelledby="tier1-title">
+          <h2 id="tier1-title">Ступень 1. Свой уютный дом</h2>
+          <p class="soft">Открыта сразу. Цель — дом, в котором хочется сидеть вечером, и дорожка к нему. Названия шагов — как у заданий в книге квестов.</p>
+          <ol class="quest">
+            <li>
+              <div>
+                <h3>Стул</h3>
+                <p>Мебель Handcrafted делается на верстаке из досок, плит и палок — рецепт любого предмета покажет <kbd>R</kbd>. На стул можно сесть: <abbr title="правая кнопка мыши">ПКМ</abbr>.</p>
+                <p>Нажми по стулу подушкой — на нём появится сиденье нужного цвета. Подушки тоже из Handcrafted: шерсть и перья.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Стол</h3>
+                <p>Поставь несколько столов рядом — они срастутся в один длинный стол, за которым поместится вся компания. Нажми по столу простынёй (три шерсти на верстаке) — получится скатерть.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Скамейка</h3>
+                <p>Скамейки, поставленные в ряд, тоже срастаются. Они нужны в таверне, на площади и в часовне — сделай с запасом.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Полка</h3>
+                <p>Полка — это ещё и маленький сундук: ПКМ открывает её. Молоток Handcrafted (железо и палки) переключает вид полки и других деталей.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Баночка</h3>
+                <p>Баночка из Supplementaries хранит печенье, бутылочки, вёдра и даже мелкую живность. Поставь пару на полку или на кухонный стол — дом сразу оживает.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Свой уютный дом</h3>
+                <p>Кровать, стол, свет, окна, крыша — и что-нибудь своё. Не обязательно большой: маленький дом с крыльцом и цветами под окном уютнее огромной коробки. Как сделать его красивее — <a href="#craft">ниже</a>.</p>
+                <p>Закрепи участок на карте, чтобы дом был только твоим: <kbd>M</kbd>, потом <kbd>C</kbd> и обведи чанки левой кнопкой мыши. Сфотографируй готовый дом и покажи друзьям.</p>
+              </div>
+            </li>
+          </ol>
+          <div class="side">
+            <h3>По желанию</h3>
+            <dl>
+              <dt>Цветочный ящик</dt>
+              <dd>Вешается под окно, в него сажают цветы и даже высокие растения (ПКМ растением по ящику).</dd>
+              <dt>Подсвечник</dt>
+              <dd>Тёплый свет свечей для вечеров в доме. Подсвечники бывают всех цветов — под любую комнату.</dd>
+              <dt>Дорожка к дому</dt>
+              <dd>Macaw’s Paths and Pavings — дорожки из досок и камня, мостовые разных узоров. Проложи дорожку от двери до ближайшей дороги: так к тебе проще заходить в гости.</dd>
+            </dl>
+          </div>
+          <div class="gate" id="gate1">
+            <img class="pixel" src="img/gate-rod.png" alt="" width="64" height="48">
+            <div>
+              <h3>Ворота 1: огненный стержень</h3>
+              <p>Вторая ступень откроется, когда огненный стержень окажется у тебя в инвентаре. Строить площадь можно и раньше — галочки в книге поставишь потом.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="tier2" aria-labelledby="tier2-title">
+          <h2 id="tier2-title">Ступень 2. Площадь и вокзал</h2>
+          <p class="soft">Открывается огненным стержнем. Цель — центр городка: площадь, таверна и вокзал, откуда дороги ведут к домам друзей.</p>
+          <ol class="quest">
+            <li>
+              <div>
+                <h3>Информационная доска</h3>
+                <p>Поставь доску на площади и нажми по ней книгой — её сможет прочитать каждый. Подходят и карты. Удобно для объявлений: когда собираемся и что строим.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Общая площадь</h3>
+                <p>Центр городка: мостовая из Macaw’s Paths and Pavings, фонари, скамейки, клумбы. Поставь указатели Supplementaries и подпиши их: «Таверна», «Вокзал», «Часовня», дома друзей.</p>
+                <p class="tip">Площадь не обязана быть квадратной. Неровный край, колодец или дерево в центре — и она уже живая.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Картина</h3>
+                <p>Immersive Paintings: поставь картину и нажми по ней ПКМ — откроется окно. Перетащи туда файл или вставь ссылку на картинку и задай размер в блоках. Фото компании, рисунок или икона — для таверны, дома или часовни.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Диван для таверны</h3>
+                <p>Диваны, поставленные рядом, складываются в один длинный, а цвет им задают подушками. Мягкий диван у камина — лучшее место в таверне.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Вокзал</h3>
+                <p>Вместе с инженером постройте вокзал у площади. Пути и станцию ставит инженер, а перрон, навес, скамейки и часы — твои. Поезд будет ходить к каждому, кто живёт у дороги.</p>
+              </div>
+            </li>
+          </ol>
+          <div class="side">
+            <h3>По желанию</h3>
+            <dl>
+              <dt>Светящаяся вывеска</dt>
+              <dd>Натри табличку светящимся чернильным мешком (ПКМ мешком по табличке) — вывеску таверны будет видно ночью.</dd>
+              <dt>Часы на площади</dt>
+              <dd>Часовой блок показывает время в игре — удобно, чтобы собираться к вечеру.</dd>
+              <dt>Люстра в таверне</dt>
+              <dd>Macaw’s Lights and Lamps — люстры, настенные фонари, бумажные лампы и уличные фонари. Свет включается и выключается ПКМ.</dd>
+              <dt>Мост для поезда</dt>
+              <dd>Macaw’s Bridges — верёвочные, каменные, железные и стеклянные мосты, есть и железнодорожный. Вместе с инженером переведите дорогу через реку или овраг.</dd>
+            </dl>
+          </div>
+          <div class="gate" id="gate2">
+            <img class="pixel" src="img/gate-star.png" alt="" width="60" height="44">
+            <div>
+              <h3>Ворота 2: визер</h3>
+              <p>Визера лучше призывать подальше от домов: строитель может заранее сделать арену в стороне от городка. Третья ступень откроется у всех, кто стоял рядом при призыве.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="tier3" aria-labelledby="tier3-title">
+          <h2 id="tier3-title">Ступень 3. Часовня и зал</h2>
+          <p class="soft">Открывается после боя с визером. Цель — места для самых тёплых вечеров: часовня и большой зал для праздников.</p>
+          <ol class="quest">
+            <li>
+              <div>
+                <h3>Колокол</h3>
+                <p>Колокол не крафтится. Его можно забрать из деревни — он висит в центре — или купить у жителя: бронника, инструментальщика или оружейника. Пусть звонит, когда все собираются.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Часовня</h3>
+                <p>Тихое место, куда можно зайти одному или вдвоём. Высокий потолок, узкие окна (готические есть в Macaw’s Windows), витражи из узорного стекла Patterned Mosaics, скамейки рядами, свечи и колокол.</p>
+                <p>На кафедре лежит Евангелие от Иоанна: положи книгу на кафедру ПКМ, и её сможет читать каждый.</p>
+                <p class="tip">Блоки узорного стекла можно поворачивать, чтобы рисунок сошёлся в один витраж.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Главный зал</h3>
+                <p>Большой зал для общих событий: праздников, ярмарок, вечеров с историями. Длинный стол из столов Handcrafted со скатертью, люстры, камин и стена с фотографиями компании.</p>
+              </div>
+            </li>
+          </ol>
+          <div class="side">
+            <h3>По желанию</h3>
+            <dl>
+              <dt>Венок на дверь</dt>
+              <dd>Рождественский венок из Snowy Spirit — на дверь таверны или своего дома.</dd>
+              <dt>Фонари вдоль дорог</dt>
+              <dd>Уличные фонари Macaw’s Lights and Lamps вдоль дороги от вокзала к площади и к домам. Фонарь можно вытянуть на нужную высоту. Ночью по такой улице приятно идти.</dd>
+            </dl>
+          </div>
+        </section>
+
+        <section class="chapter" id="craft" aria-labelledby="craft-title">
+          <h2 id="craft-title">Как строить красивее</h2>
+          <dl class="mods">
+            <div><dt>Не коробка</dt><dd><p>Крыша с выносом за стены, крыльцо, окна на блок глубже стены.</p><p>Даже маленький дом сразу выглядит иначе.</p></dd></div>
+            <div><dt>Три материала</dt><dd><p>Камень — основание, дерево или каркас — стены, тёмная крыша сверху.</p><p>Больше трёх-четырёх материалов на дом — уже пестрота.</p></dd></div>
+            <div><dt>Фахверк</dt><dd><p>Деревянный каркас из Supplementaries: поставь его и нажми по нему любым полным блоком — каркас заполнится.</p></dd></div>
+            <div><dt>Тёплый свет</dt><dd><p>Фонари, свечи, люстры, свет из окон.</p><p>Ряд факелов на стене снаружи делает дом похожим на шахту.</p></dd></div>
+            <div><dt>Зелень рядом</dt><dd><p>Цветочные ящики, кусты, дерево у крыльца, дорожка к двери.</p></dd></div>
+            <div><dt>Соседи</dt><dd><p>Строй рядом с друзьями и протягивай дорожки. Городок складывается сам, когда дома стоят близко.</p></dd></div>
+          </dl>
+        </section>
+
+        <section class="chapter" id="reading" aria-labelledby="reading-title">
+          <h2 id="reading-title">Где почитать ещё</h2>
+          <ul class="reading">
+            <li><a href="https://ru.minecraft.wiki/w/%D0%A0%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE:%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE">Руководство по строительству на русской Minecraft Wiki</a><span>Основы: материалы, формы, детали.</span></li>
+            <li><a href="https://github.com/MehVahdJukaar/Supplementaries/wiki">Supplementaries Wiki</a><span>Вики автора мода на английском: что умеет каждый блок.</span></li>
+          </ul>
+          <h3>Другие дороги</h3>
+          <ul class="guides">
+            <li><a href="engineer.html"><img class="pixel" src="img/road-engineer.png" alt="" width="52" height="52"><b>Инженер</b><span>Механизмы и поезда</span></a></li>
+            <li><a href="cook.html"><img class="pixel" src="img/road-cook.png" alt="" width="52" height="52"><b>Фермер-повар</b><span>Огород, кухня, чай</span></a></li>
+            <li><a href="explorer.html"><img class="pixel" src="img/road-explorer.png" alt="" width="52" height="52"><b>Исследователь</b><span>Рыбалка, Незер, Энд</span></a></li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <div>
+        <span data-config="name">Наш сервер</span>
+        <small>Неофициальный сервер Minecraft, не связан с Mojang и Microsoft. Картинки на сайте нарисованы специально для него.</small>
+      </div>
+      <nav class="nav" aria-label="Разделы сайта в подвале">
+        <a href="index.html">О сервере</a>
+        <a href="join.html">Как зайти</a>
+        <a href="guide.html">Обучение</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

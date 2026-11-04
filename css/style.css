@@ -1,0 +1,453 @@
+/* ---------- Шрифты (лежат рядом, интернет-шрифты не нужны) ---------- */
+@font-face {
+  font-family: "Literata";
+  src: url("../fonts/literata-cyrillic-opsz-normal.woff2") format("woff2");
+  font-weight: 200 900; font-style: normal; font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Literata";
+  src: url("../fonts/literata-latin-opsz-normal.woff2") format("woff2");
+  font-weight: 200 900; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Literata";
+  src: url("../fonts/literata-cyrillic-opsz-italic.woff2") format("woff2");
+  font-weight: 200 900; font-style: italic; font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Literata";
+  src: url("../fonts/literata-latin-opsz-italic.woff2") format("woff2");
+  font-weight: 200 900; font-style: italic; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Пиксельный шрифт — только для клавиш и номеров шагов: латиница и цифры */
+@font-face {
+  font-family: "Silkscreen";
+  src: url("../fonts/silkscreen-latin-400-normal.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Silkscreen";
+  src: url("../fonts/silkscreen-latin-700-normal.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+/* ---------- Цвета и размеры ---------- */
+:root {
+  --paper: #f6ecd3;        /* страница книги из игры */
+  --paper-deep: #ebddba;
+  --ink: #2b1d12;          /* тёмный дуб */
+  --ink-soft: #6a5136;
+  --rule: #cdb991;         /* светлые доски */
+  --night: #17182a;        /* небо на обложке */
+  --oak: #2a1d14;
+  --cream: #f6ecd3;
+  --mist: #cfc3aa;
+  --lantern: #f0b25e;      /* свет фонаря */
+  --lantern-deep: #d48f3a;
+  --lantern-ink: #8c4f10;  /* тот же свет, но читаемый на бумаге */
+  --moss: #46622b;
+
+  --serif: "Literata", "PT Serif", Georgia, "Times New Roman", serif;
+  --pixel: "Silkscreen", "Courier New", monospace;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+
+  --wrap: 1160px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --measure: 64ch;
+  --section: clamp(64px, 10vw, 128px);
+}
+
+/* ---------- Основа ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+}
+@media (min-width: 900px) { body { font-size: 1.125rem; } }
+
+img { max-width: 100%; }
+.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
+@supports (image-rendering: pixelated) { .pixel { image-rendering: pixelated; } }
+
+h1, h2, h3 { font-weight: 560; line-height: 1.12; letter-spacing: -0.012em; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(2rem, 1.35rem + 2.5vw, 3.05rem); margin-bottom: 0.45em; }
+h3 { font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.45rem); margin-bottom: 0.35em; letter-spacing: -0.005em; }
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--moss); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 3px solid var(--lantern-deep); outline-offset: 3px; border-radius: 2px; }
+
+code, kbd { font-size: 0.86em; }
+code {
+  font-family: var(--mono);
+  background: var(--paper-deep);
+  padding: 0.08em 0.38em;
+  border-radius: 3px;
+  overflow-wrap: anywhere;
+}
+
+/* Клавиша — как кнопка в игре: светлая грань сверху, тёмная снизу */
+kbd {
+  display: inline-block;
+  min-width: 1.75em;
+  padding: 0.12em 0.42em 0.06em;
+  font-family: var(--pixel);
+  font-weight: 400;
+  font-size: 0.78em;
+  line-height: 1.55;
+  text-align: center;
+  color: var(--ink);
+  background: #e2d6b8;
+  border: 2px solid;
+  border-color: #fbf3df #9c8763 #9c8763 #fbf3df;
+  border-radius: 2px;
+}
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+.measure { max-width: var(--measure); }
+.lede { font-size: clamp(1.15rem, 1.02rem + 0.55vw, 1.38rem); line-height: 1.5; }
+.soft { color: var(--ink-soft); }
+
+.skip {
+  position: absolute; left: 12px; top: -60px; z-index: 10;
+  background: var(--lantern); color: var(--ink); padding: 8px 14px; border-radius: 2px;
+}
+.skip:focus { top: 12px; }
+
+/* ---------- Кнопки: блок с тенью снизу, при нажатии «проседает» ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.72em 1.25em 0.66em;
+  font: 600 1rem/1.2 var(--serif);
+  text-decoration: none;
+  border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+  transition: transform 80ms ease, box-shadow 80ms ease, background-color 120ms ease;
+}
+.btn--lantern { background: var(--lantern); color: var(--ink); box-shadow: 0 4px 0 var(--lantern-deep); }
+.btn--lantern:hover { background: #f5c077; color: var(--ink); }
+.btn--ghost { background: transparent; color: var(--cream); box-shadow: inset 0 0 0 2px rgba(246, 236, 211, 0.45); }
+.btn--ghost:hover { color: var(--cream); box-shadow: inset 0 0 0 2px var(--cream); }
+.btn--ink { background: var(--ink); color: var(--cream); box-shadow: 0 4px 0 #120c07; }
+.btn--ink:hover { background: #3d2a1a; color: var(--cream); }
+.btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--lantern-deep); }
+.btn--ghost:active { box-shadow: inset 0 0 0 2px var(--cream); }
+.actions { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; }
+
+/* ---------- Шапка ---------- */
+.site-header { background: var(--night); color: var(--cream); position: relative; z-index: 2; }
+.site-header__inner {
+  max-width: var(--wrap); margin: 0 auto; padding: 14px var(--gutter);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 32px;
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--cream); text-decoration: none; font-size: 1.2rem; font-weight: 600; }
+.brand:hover { color: var(--cream); }
+.brand img { width: 28px; height: 28px; }
+.nav { display: flex; flex-wrap: wrap; gap: 4px clamp(18px, 3vw, 34px); font-size: 1rem; }
+.nav a { color: var(--mist); text-decoration: none; padding: 6px 0 4px; border-bottom: 2px solid transparent; }
+.nav a:hover { color: var(--cream); }
+.nav a[aria-current="page"], .nav a[aria-current="true"] { color: var(--cream); border-bottom-color: var(--lantern); }
+
+/* ---------- Обложка главной ---------- */
+.hero { position: relative; background: var(--night); color: var(--cream); }
+.hero__text { padding-top: clamp(32px, 6vw, 72px); padding-bottom: 24px; position: relative; z-index: 1; }
+.hero h1 { font-size: clamp(2.5rem, 1.35rem + 4.4vw, 4.2rem); line-height: 1.03; font-weight: 520; max-width: 16ch; margin-bottom: 0.38em; letter-spacing: -0.02em; }
+.hero__lede { color: var(--mist); max-width: 46ch; font-size: clamp(1.08rem, 0.98rem + 0.45vw, 1.3rem); line-height: 1.5; margin-bottom: 1.6em; }
+.hero__art img { display: block; width: 100%; height: auto; }
+
+/* На широких экранах текст лежит на небе картинки; размер заголовка зависит и от высоты окна,
+   чтобы текст не наезжал на деревню на невысоких ноутбуках */
+@media (min-width: 1100px) and (min-aspect-ratio: 3/2) {
+  .hero__text { position: absolute; inset: 0 0 auto 0; padding-top: clamp(24px, 6vh, 72px); }
+  .hero h1 { font-size: clamp(2.4rem, 0.5rem + min(4.4vw, 7.4vh), 4.2rem); }
+  .hero__lede { font-size: clamp(1.05rem, 0.7rem + 1.1vh, 1.3rem); margin-bottom: 1.3em; }
+  .hero__art img { max-height: calc(100vh - 60px); max-height: calc(100svh - 60px); object-fit: cover; object-position: 50% 100%; }
+}
+
+/* ---------- Разделы главной ---------- */
+.section { padding: var(--section) 0; }
+.section--deep { background: var(--paper-deep); }
+.section--oak { background: var(--oak); color: var(--cream); }
+.section--oak a { color: var(--lantern); }
+.section--oak .soft { color: var(--mist); }
+.section--night { background: var(--night); color: var(--cream); }
+
+.intro { display: grid; gap: 48px; }
+@media (min-width: 960px) { .intro { grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; } }
+.facts { margin: 0; border-top: 1px solid var(--rule); }
+.facts > div { padding: 16px 0 15px; border-bottom: 1px solid var(--rule); display: grid; gap: 2px; }
+@media (min-width: 560px) { .facts > div { grid-template-columns: 8.5em 1fr; gap: 16px; } }
+.facts dt { font-weight: 600; }
+.facts dd { margin: 0; color: var(--ink-soft); }
+
+/* Четыре дороги — окна в мир, как круглые иллюминаторы */
+.roads-head { display: grid; gap: 12px 64px; margin-bottom: clamp(40px, 6vw, 64px); }
+@media (min-width: 960px) { .roads-head { grid-template-columns: 5fr 7fr; align-items: end; } }
+.roads { list-style: none; margin: 0; padding: 0; display: grid; gap: 48px 32px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.road__art { width: min(100%, 210px); height: auto; aspect-ratio: 1; border-radius: 50%; display: block; margin-bottom: 22px; box-shadow: 0 0 0 1px var(--rule), 0 0 0 7px var(--paper), 0 0 0 8px var(--rule); }
+.road h3 { margin-bottom: 0.15em; }
+.road__mods { font-style: italic; color: var(--ink-soft); font-size: 0.94em; margin-bottom: 0.7em; }
+.road__need { border-top: 1px solid var(--rule); padding-top: 0.7em; margin-top: 0.9em; font-size: 0.95em; color: var(--ink-soft); }
+.roads-more { margin-top: clamp(40px, 6vw, 56px); }
+
+/* Вечер: картинка у костра и три шага */
+.evening { display: grid; gap: 40px; align-items: start; }
+@media (min-width: 960px) { .evening { grid-template-columns: 6fr 5fr; gap: 72px; } }
+.evening__art img { display: block; width: 100%; height: auto; border-radius: 3px; }
+.evening__art figcaption { color: var(--mist); font-size: 0.9rem; margin-top: 10px; font-style: italic; }
+.steps-inline { list-style: none; margin: 28px 0 0; padding: 0; counter-reset: s; }
+.steps-inline li { counter-increment: s; display: grid; grid-template-columns: 2.6rem 1fr; gap: 0 14px; padding: 16px 0; border-top: 1px solid rgba(207, 195, 170, 0.25); }
+.steps-inline li::before { content: counter(s); font-family: var(--pixel); font-size: 1.6rem; line-height: 1; color: var(--lantern); padding-top: 4px; }
+.steps-inline h3 { font-size: 1.2rem; margin-bottom: 0.2em; }
+.steps-inline p { color: var(--mist); }
+
+/* Как мы играем: четыре правила в сетке с тонкими линиями */
+.rules { display: grid; margin-top: clamp(32px, 5vw, 48px); border-top: 1px solid var(--rule); }
+@media (min-width: 720px) { .rules { grid-template-columns: 1fr 1fr; } }
+.rule { padding: 28px 0 30px; border-bottom: 1px solid var(--rule); }
+@media (min-width: 720px) {
+  .rule { padding: 34px 40px 36px 0; }
+  .rule:nth-child(even) { padding-left: 40px; padding-right: 0; border-left: 1px solid var(--rule); }
+}
+.rule p { color: var(--ink-soft); max-width: 46ch; }
+
+/* Часовня */
+.chapel { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 960px) { .chapel { grid-template-columns: 5fr 6fr; gap: 72px; } }
+.chapel__art img { display: block; width: 100%; height: auto; border-radius: 3px; }
+
+/* Приглашение внизу */
+.join-cta { display: grid; gap: 28px; }
+@media (min-width: 960px) { .join-cta { grid-template-columns: 1fr auto; align-items: end; gap: 64px; } }
+.join-cta h2 { margin-bottom: 0.3em; }
+.join-cta p { color: var(--mist); max-width: 52ch; }
+
+/* Адрес и другие значения с кнопкой «Скопировать» */
+.copy-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.copy-value {
+  font-family: var(--serif); font-size: 1.3rem; font-weight: 600; letter-spacing: 0.01em;
+  font-variant-numeric: lining-nums tabular-nums;
+  padding: 0.25em 0.6em; border-radius: 3px;
+  background: rgba(246, 236, 211, 0.08); color: var(--cream);
+  box-shadow: inset 0 0 0 1px rgba(246, 236, 211, 0.22);
+}
+.copy-btn {
+  font: 600 0.92rem/1.2 var(--serif); cursor: pointer;
+  padding: 0.55em 0.95em; border-radius: 3px; border: 0;
+  background: transparent; color: var(--lantern); box-shadow: inset 0 0 0 1px var(--lantern);
+}
+.copy-btn:hover { background: rgba(240, 178, 94, 0.12); }
+.on-paper .copy-value { background: #fffaf0; color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
+.on-paper .copy-btn { color: var(--lantern-ink); box-shadow: inset 0 0 0 1px var(--lantern-ink); }
+.on-paper .copy-btn:hover { background: rgba(140, 79, 16, 0.08); }
+
+/* ---------- Подвал ---------- */
+.site-footer { background: var(--night); color: var(--mist); padding: 40px 0 48px; font-size: 0.95rem; border-top: 1px solid rgba(207, 195, 170, 0.15); }
+.site-footer__inner { display: grid; gap: 18px; }
+@media (min-width: 800px) { .site-footer__inner { grid-template-columns: 1fr auto; align-items: start; } }
+.site-footer a { color: var(--mist); }
+.site-footer a:hover { color: var(--cream); }
+.site-footer .nav a { padding: 0; border: 0; }
+.site-footer small { display: block; font-size: 0.85rem; opacity: 0.85; margin-top: 6px; }
+
+/* ---------- Внутренние страницы ---------- */
+.page-head { background: var(--night); color: var(--cream); padding: clamp(40px, 7vw, 88px) 0 clamp(36px, 6vw, 64px); }
+.page-head h1 { font-size: clamp(2.4rem, 1.4rem + 3.6vw, 4rem); line-height: 1.05; letter-spacing: -0.018em; font-weight: 520; margin-bottom: 0.35em; }
+.page-head .lede { color: var(--mist); max-width: 44ch; }
+
+/* Как зайти: шаги слева, памятка справа */
+.join-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; padding-top: clamp(48px, 7vw, 88px); padding-bottom: var(--section); }
+@media (min-width: 1000px) { .join-layout { grid-template-columns: minmax(0, 1fr) 340px; gap: 72px; align-items: start; } }
+.need { margin: 0 0 clamp(36px, 5vw, 52px); padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.need li { padding: 12px 0 11px; border-bottom: 1px solid var(--rule); }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+.steps > li { counter-increment: step; position: relative; display: grid; grid-template-columns: 3.2rem minmax(0, 1fr); gap: 0 18px; padding: 26px 0 28px; border-top: 1px solid var(--rule); }
+.steps > li::before {
+  content: counter(step); font-family: var(--pixel); font-weight: 400; font-size: 1.75rem; line-height: 1.1;
+  color: var(--lantern-ink); padding-top: 2px;
+}
+.steps h3 { margin-bottom: 0.3em; }
+.steps p, .steps ul { max-width: var(--measure); }
+.steps ul { padding-left: 1.1em; margin: 0 0 1em; }
+.steps li li { margin-bottom: 0.3em; }
+.note { color: var(--ink-soft); font-size: 0.95em; }
+
+.aside { display: grid; gap: 22px; }
+@media (min-width: 1000px) { .aside { position: sticky; top: 24px; } }
+.card { background: #fffaf0; border: 1px solid var(--rule); border-radius: 4px; padding: 22px 22px 24px; }
+.card h2 { font-size: 1.15rem; margin-bottom: 0.6em; letter-spacing: 0; }
+.card p { font-size: 0.95rem; color: var(--ink-soft); }
+.fingerprint { font-family: var(--mono); font-size: 0.82rem; line-height: 1.5; word-break: break-all; background: var(--paper); padding: 10px 12px; border-radius: 3px; margin: 0 0 12px; color: var(--ink); }
+.fingerprint b { color: var(--lantern-ink); }
+
+.faq { margin-top: clamp(56px, 8vw, 88px); }
+.faq h2 { margin-bottom: 0.6em; }
+.faq details { border-top: 1px solid var(--rule); }
+.faq details:last-of-type { border-bottom: 1px solid var(--rule); }
+.faq summary { cursor: pointer; list-style: none; padding: 16px 32px 16px 0; font-weight: 600; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 4px; top: 13px; font-family: var(--pixel); font-size: 1.3rem; color: var(--lantern-ink); }
+.faq details[open] summary::after { content: "−"; }
+.faq details > div { padding: 0 0 20px; color: var(--ink-soft); max-width: var(--measure); }
+
+/* Обучение: оглавление сбоку, текст — книжной колонкой */
+.guide-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: clamp(40px, 6vw, 72px); padding-bottom: var(--section); }
+@media (min-width: 1040px) { .guide-layout { grid-template-columns: 250px minmax(0, 1fr); gap: 72px; align-items: start; } }
+.toc { font-size: 0.98rem; }
+@media (min-width: 1040px) { .toc { position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow: auto; } }
+.toc summary { cursor: pointer; font-weight: 600; padding: 12px 0; list-style: none; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.toc summary::-webkit-details-marker { display: none; }
+.toc ol { list-style: none; margin: 12px 0 0; padding: 0; }
+.toc a { display: block; padding: 6px 0 6px 14px; color: var(--ink-soft); text-decoration: none; border-left: 2px solid var(--rule); }
+.toc a:hover { color: var(--ink); }
+.toc a[aria-current="true"] { color: var(--ink); border-left-color: var(--lantern-deep); font-weight: 600; }
+@media (min-width: 1040px) {
+  .toc summary { pointer-events: none; border: 0; padding-top: 0; color: var(--ink-soft); font-weight: 500; }
+}
+
+.chapter { max-width: 70ch; padding-bottom: clamp(48px, 7vw, 80px); margin-bottom: clamp(48px, 7vw, 80px); border-bottom: 1px solid var(--rule); scroll-margin-top: 20px; }
+.chapter:last-child { border-bottom: 0; margin-bottom: 0; }
+.chapter h2 { font-size: clamp(1.9rem, 1.4rem + 1.8vw, 2.6rem); }
+.chapter h3 { margin-top: 1.6em; }
+.chapter ul, .chapter ol { padding-left: 1.2em; margin: 0 0 1em; }
+.chapter li { margin-bottom: 0.4em; }
+.chapter-head { display: flex; align-items: center; gap: 22px; margin-bottom: 0.6em; }
+.chapter-head img { width: 84px; height: 84px; aspect-ratio: 1; border-radius: 50%; flex: none; box-shadow: 0 0 0 1px var(--rule), 0 0 0 5px var(--paper), 0 0 0 6px var(--rule); }
+.chapter-head h2 { margin: 0; }
+
+/* Списки «мод — что даёт — как пользоваться» */
+.mods { margin: 1.2em 0 0; border-top: 1px solid var(--rule); }
+.mods > div { padding: 14px 0 13px; border-bottom: 1px solid var(--rule); }
+@media (min-width: 680px) { .mods > div { display: grid; grid-template-columns: 11.5em 1fr; gap: 18px; } }
+.mods dt { font-weight: 600; }
+.mods dd { margin: 0; }
+.mods dd p { margin: 0; }
+.mods dd p + p { color: var(--ink-soft); margin-top: 0.25em; font-size: 0.96em; }
+
+.keys { margin: 1.2em 0 0; border-top: 1px solid var(--rule); }
+.keys > div { display: grid; grid-template-columns: 7.2em 1fr; gap: 14px; padding: 12px 0 11px; border-bottom: 1px solid var(--rule); align-items: baseline; }
+@media (max-width: 560px) { .keys > div { grid-template-columns: 5.4em 1fr; gap: 10px; } }
+.keys dt { white-space: nowrap; }
+.keys dd { margin: 0; }
+.keys .warn { display: block; color: var(--lantern-ink); font-size: 0.95em; margin-top: 2px; }
+
+.start-list { counter-reset: n; list-style: none; padding: 0 !important; }
+.start-list > li { counter-increment: n; display: grid; grid-template-columns: 2.2rem 1fr; gap: 0 10px; margin-bottom: 0.65em; }
+.start-list > li::before { content: counter(n); font-family: var(--pixel); color: var(--lantern-ink); font-size: 1rem; line-height: 1.75; }
+
+/* План игры: этапы и общие ворота */
+.stages { list-style: none; padding: 0 !important; margin: 1.4em 0 0; counter-reset: st; }
+.stage { counter-increment: st; display: grid; grid-template-columns: 2.6rem 1fr; gap: 0 16px; padding: 18px 0; border-top: 1px solid var(--rule); }
+.stage::before { content: counter(st, decimal); font-family: var(--pixel); font-size: 1.35rem; color: var(--ink-soft); line-height: 1.25; }
+.stage h3 { margin: 0 0 0.2em; font-size: 1.2rem; }
+.stage__when { font-style: italic; color: var(--ink-soft); font-weight: 400; }
+.stage p { margin: 0; }
+.stage .together { color: var(--ink-soft); margin-top: 0.3em; }
+.gate { counter-increment: none; display: grid; grid-template-columns: 2.6rem 1fr; gap: 0 16px; padding: 18px 16px; margin: 4px 0; background: #fffaf0; border: 1px solid var(--lantern-deep); border-radius: 4px; }
+.gate::before { content: none; }
+.gate img { width: 32px; height: auto; margin-top: 4px; }
+.gate h3 { margin: 0 0 0.2em; font-size: 1.2rem; }
+.gate p { margin: 0; color: var(--ink-soft); }
+
+/* ---------- Пошаговые руководства по дорогам ---------- */
+.crumbs { font-size: 0.95rem; color: var(--mist); margin: 0 0 14px; }
+.crumbs a { color: var(--mist); }
+.crumbs a:hover { color: var(--cream); }
+
+.page-head--road .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 56px; }
+.page-head__plate { width: 96px; height: auto; aspect-ratio: 1; border-radius: 50%; margin-bottom: 22px; box-shadow: 0 0 0 1px rgba(207, 195, 170, 0.35), 0 0 0 6px var(--night), 0 0 0 7px rgba(207, 195, 170, 0.35); }
+@media (min-width: 900px) {
+  .page-head--road .wrap { grid-template-columns: minmax(0, 1fr) auto; }
+  .page-head__plate { grid-column: 2; grid-row: 1; width: 176px; margin: 8px 0 0; align-self: start; }
+}
+
+/* Дорожка из трёх ступеней и двух ворот — тот же путь, что в книге квестов */
+.route { list-style: none; margin: clamp(26px, 4vw, 40px) 0 0; padding: 0; display: grid; gap: 8px; grid-column: 1 / -1; }
+.route a { color: var(--cream); text-decoration: none; }
+.route__tier a { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 12px; align-items: baseline; height: 100%; padding: 13px 16px 14px; border: 1px solid rgba(207, 195, 170, 0.3); border-radius: 4px; }
+.route__tier a:hover { border-color: var(--lantern); }
+.route__n { font-family: var(--pixel); color: var(--lantern); font-size: 1.25rem; line-height: 1; }
+.route__name { font-weight: 600; line-height: 1.3; }
+.route__when { grid-column: 2; color: var(--mist); font-size: 0.88rem; line-height: 1.4; }
+.route__gate a { display: flex; align-items: center; gap: 12px; padding: 2px 16px; color: var(--mist); font-size: 0.88rem; }
+.route__gate a:hover { color: var(--cream); }
+.route__gate img { width: 26px; height: auto; flex: none; }
+@media (min-width: 820px) {
+  .route { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); gap: 0; align-items: stretch; }
+  .route__gate { position: relative; display: flex; align-items: center; }
+  .route__gate::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 2px dashed rgba(240, 178, 94, 0.55); }
+  .route__gate a { position: relative; flex-direction: column; gap: 0; padding: 0 10px; background: var(--night); margin: 0 6px; }
+  .route__gate a span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .route__gate img { width: 30px; }
+}
+
+/* Задание из книги: номер, название как в игре, что сделать */
+.chapter .quest { list-style: none; margin: 1.2em 0 0; padding: 0; counter-reset: q; }
+.chapter .quest > li { counter-increment: q; display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 0 14px; padding: 22px 0 24px; margin: 0; border-top: 1px solid var(--rule); }
+.chapter .quest > li::before { content: counter(q); font-family: var(--pixel); font-size: 1.45rem; line-height: 1.2; color: var(--lantern-ink); }
+.chapter .quest h3 { margin: 0 0 0.35em; font-size: clamp(1.2rem, 1.1rem + 0.35vw, 1.38rem); }
+.chapter .quest p, .chapter .quest ul { margin: 0 0 0.7em; }
+.chapter .quest p:last-child, .chapter .quest ul:last-child { margin-bottom: 0; }
+.chapter .quest ul { padding-left: 1.1em; list-style: disc; }
+.recipe { color: var(--ink-soft); font-size: 0.95em; }
+.recipe i { font-style: italic; color: var(--ink); }
+.tip { font-size: 0.95em; padding-left: 12px; border-left: 2px solid var(--lantern-deep); }
+
+/* Побочные задания — пунктирная рамка, как необязательные квесты в книге */
+.side { margin: 24px 0 0; padding: 18px 20px 20px; border: 2px dashed #c4ad7c; border-radius: 4px; }
+.chapter .side h3 { margin: 0 0 0.7em; font-size: 1.08rem; }
+.side dl { margin: 0; }
+.side dt { font-weight: 600; }
+.side dd { margin: 0 0 0.85em; }
+.side dd:last-child { margin-bottom: 0; }
+
+.chapter > .gate { margin: 1.4em 0 0; }
+.chapter .gate h3 { margin-top: 0; }
+
+.faq--inline { margin-top: 1.2em; }
+
+/* Где почитать ещё */
+.chapter .reading { list-style: none; margin: 1em 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.chapter .reading > li { margin: 0; padding: 12px 0 11px; border-bottom: 1px solid var(--rule); }
+.reading a { font-weight: 600; }
+.reading span { display: block; color: var(--ink-soft); font-size: 0.95em; }
+
+/* Таблица руд */
+.table-scroll { overflow-x: auto; margin: 1.2em 0; }
+.ores { width: 100%; min-width: 22em; border-collapse: collapse; font-size: 0.97em; }
+.ores th, .ores td { text-align: left; vertical-align: top; padding: 10px 14px 9px 0; border-bottom: 1px solid var(--rule); }
+.ores thead th { font-weight: 600; border-bottom-color: var(--ink-soft); }
+.ores td:nth-child(2) { font-variant-numeric: tabular-nums; }
+.ores td:last-child { color: var(--ink-soft); }
+
+/* Ссылки на руководства и на соседние дороги */
+.guides { list-style: none; margin: 1.2em 0 0; padding: 0 !important; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
+.guides > li { margin: 0 !important; }
+.guides a { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 2px 14px; align-items: center; height: 100%; padding: 12px 14px; background: #fffaf0; border: 1px solid var(--rule); border-radius: 4px; color: var(--ink); text-decoration: none; }
+.guides a:hover { border-color: var(--lantern-deep); color: var(--ink); }
+.guides img { grid-row: span 2; width: 52px; height: 52px; border-radius: 50%; box-shadow: 0 0 0 1px var(--rule); }
+.guides b { font-weight: 600; line-height: 1.3; }
+.guides span { font-size: 0.9em; color: var(--ink-soft); line-height: 1.4; }
+.guides .night-icon { background: var(--night); padding: 8px; }
+.chapter .more { margin-top: 1.2em; }
+
+/* ---------- Чуть-чуть движения: только кнопки, и только если человек не против ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }

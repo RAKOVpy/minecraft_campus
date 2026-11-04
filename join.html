@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Как зайти — Наш сервер</title>
+  <meta name="description" content="Как зайти на сервер через TLauncher: десять шагов, один раз и минут на десять.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Как зайти на сервер">
+  <meta property="og:description" content="Один раз и минут на десять. Дальше сборка обновляется сама.">
+  <meta property="og:image" content="img/og.png">
+  <meta name="theme-color" content="#17182a">
+  <link rel="icon" type="image/png" href="img/favicon-32.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="preload" href="fonts/literata-cyrillic-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="index.html"><img class="pixel" src="img/favicon-32.png" alt="" width="28" height="28"><span data-config="name">Наш сервер</span></a>
+      <nav class="nav" aria-label="Разделы сайта">
+        <a href="index.html">О сервере</a>
+        <a href="join.html" aria-current="page">Как зайти</a>
+        <a href="guide.html">Обучение</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <h1>Как зайти на сервер</h1>
+        <p class="lede">Один раз и минут на десять. Дальше сборка будет обновляться сама при каждом запуске.</p>
+      </div>
+    </section>
+
+    <div class="wrap join-layout">
+      <div>
+        <h2 style="font-size:1.6rem">Что понадобится</h2>
+        <ul class="need">
+          <li><b>TLauncher.</b> Скачивай только с официального сайта <a href="https://tlauncher.org/" rel="noopener">tlauncher.org</a> — у него много поддельных копий.</li>
+          <li><b>Архив с файлами игры.</b> <a data-config-link="archiveUrl" href="#" hidden>Скачать архив</a><span data-config-fallback="archiveUrl">Ссылку пришлёт организатор.</span></li>
+          <li><b>Ник.</b> Придумай заранее и потом не меняй: сервер узнаёт тебя по нему, с большими и маленькими буквами.</li>
+          <li><b>Компьютер.</b> Лучше от 8 ГБ оперативной памяти. Видеокарта может быть встроенной.</li>
+        </ul>
+
+        <h2 style="font-size:1.6rem">По шагам</h2>
+        <ol class="steps">
+          <li><div>
+            <h3>Запусти обычную версию 1.21.1</h3>
+            <p>В TLauncher выбери в списке версий <b>Release 1.21.1</b>, нажми «Войти в игру», дождись главного меню и закрой игру. Так появятся базовые файлы, на которые опирается наша сборка.</p>
+          </div></li>
+          <li><div>
+            <h3>Скачай архив</h3>
+            <p>В нём NeoForge — основа для модов — и мод AutoModpack. Остальные моды сервер пришлёт сам. <a data-config-link="archiveUrl" href="#" hidden>Скачать архив</a><span data-config-fallback="archiveUrl" class="soft">Ссылку на архив пришлёт организатор.</span></p>
+          </div></li>
+          <li><div>
+            <h3>Открой папку игры</h3>
+            <ul>
+              <li><b>Windows:</b> нажми <kbd>Win</kbd> + <kbd>R</kbd>, вставь <code>%AppData%\.minecraft</code> и нажми Enter.</li>
+              <li><b>Mac:</b> в Finder нажми <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd> и вставь <code>~/Library/Application Support/minecraft</code>.</li>
+            </ul>
+          </div></li>
+          <li><div>
+            <h3>Убери чужие моды</h3>
+            <p>Если в этой папке уже есть папка <code>mods</code> с модами, перенеси их куда-нибудь, например на рабочий стол. На нашем сервере они помешают.</p>
+          </div></li>
+          <li><div>
+            <h3>Распакуй архив в папку игры</h3>
+            <p>С заменой файлов. После этого в папке игры должны оказаться <code>versions</code> с папкой <code>neoforge-21.1.265</code> внутри, <code>libraries</code> и <code>mods</code> с файлом AutoModpack.</p>
+          </div></li>
+          <li><div>
+            <h3>Выбери версию и память</h3>
+            <p>Перезапусти TLauncher и выбери в списке версий <code>neoforge-21.1.265</code>. В настройках TLauncher выдели игре 4 ГБ памяти, а если на компьютере всего 8 ГБ — 3 ГБ.</p>
+          </div></li>
+          <li><div>
+            <h3>Добавь сервер</h3>
+            <p>Запусти игру, открой «Сетевая игра» → «Добавить» и вставь адрес:</p>
+            <div class="copy-row on-paper">
+              <span class="copy-value" data-config="address">45.11.16.76:7049</span>
+              <button class="copy-btn" type="button" data-copy="address">Скопировать</button>
+            </div>
+          </div></li>
+          <li><div>
+            <h3>Подтверди сервер и дождись сборки</h3>
+            <p>При первом подключении AutoModpack покажет отпечаток сертификата сервера. Сверь его с отпечатком справа на этой странице — он должен совпасть целиком. Подтверди, и сборка скачается сама. Это займёт несколько минут, потом игра попросит перезапуск.</p>
+            <p class="note">Если отпечаток не совпадает, не подтверждай и напиши организатору.</p>
+          </div></li>
+          <li><div>
+            <h3>Придумай пароль</h3>
+            <p>Зайди снова, открой чат клавишей <kbd>T</kbd> и напиши <code>/register пароль пароль</code> — один и тот же пароль два раза. В следующие разы входи командой <code>/login пароль</code>.</p>
+            <p class="note">Это пароль только для нашего сервера, с TLauncher он никак не связан. Придумай новый.</p>
+          </div></li>
+          <li><div>
+            <h3>Настрой голос и открой книгу квестов</h3>
+            <p>Нажми <kbd>V</kbd> — откроется меню голосового чата. Выбери микрофон и «Активацию голосом». Потом открой инвентарь <kbd>E</kbd> и нажми значок книги слева сверху: начни с главы «С чего начать». Дальше — <a href="guide.html">обучение</a>.</p>
+          </div></li>
+        </ol>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title" style="font-size:1.6rem">Если что-то не получается</h2>
+          <details>
+            <summary>В списке версий нет neoforge-21.1.265</summary>
+            <div>Архив распакован не туда. В папке игры должна быть папка <code>versions</code>, а в ней <code>neoforge-21.1.265</code>. Если всё оказалось внутри ещё одной папки, перенеси содержимое на уровень выше и перезапусти TLauncher.</div>
+          </details>
+          <details>
+            <summary>Игра вылетает при запуске</summary>
+            <div>Проверь, что выбрана версия <code>neoforge-21.1.265</code> и что в папке <code>mods</code> нет чужих модов. Выдели игре 3–4 ГБ памяти в настройках TLauncher и закрой браузер и другие тяжёлые программы.</div>
+          </details>
+          <details>
+            <summary>Пишет «You are not white-listed on this server»</summary>
+            <div>Тебя ещё не добавили в белый список. Напиши организатору свой ник — точно так, как он написан в TLauncher, с большими и маленькими буквами.</div>
+          </details>
+          <details>
+            <summary>Забыл пароль</summary>
+            <div>Напиши организатору: он задаст тебе новый пароль.</div>
+          </details>
+          <details>
+            <summary>Игра тормозит</summary>
+            <div>Уменьши дальность прорисовки до 6–8 чанков в настройках графики. Ускорители уже стоят в сборке. Ещё помогает закрыть браузер и другие программы.</div>
+          </details>
+          <details>
+            <summary>Меня не слышно или я никого не слышу</summary>
+            <div>Нажми <kbd>V</kbd> и проверь, выбраны ли нужные микрофон и динамики. В Windows разреши приложениям доступ к микрофону: «Параметры» → «Конфиденциальность» → «Микрофон».</div>
+          </details>
+          <details>
+            <summary>Игра на английском</summary>
+            <div>В главном меню: Options → Language → «Русский» → Done.</div>
+          </details>
+        </section>
+      </div>
+
+      <aside class="aside" aria-label="Памятка">
+        <div class="card on-paper">
+          <h2>Адрес сервера</h2>
+          <div class="copy-row">
+            <span class="copy-value" data-config="address">45.11.16.76:7049</span>
+            <button class="copy-btn" type="button" data-copy="address">Скопировать</button>
+          </div>
+        </div>
+        <div class="card on-paper">
+          <h2>Отпечаток сертификата</h2>
+          <p>Игра покажет его при первом входе. Он должен совпасть целиком.</p>
+          <p class="fingerprint" data-config="fingerprint">97a566fc719fa740ee9a26f9bb151d349bd54b62f78619d5871f9038586a891f</p>
+          <button class="copy-btn" type="button" data-copy="fingerprint">Скопировать</button>
+        </div>
+        <div class="card">
+          <h2>Не получается?</h2>
+          <p>Напиши организатору — разберёмся вместе. Пришли скриншот того, что видишь на экране.</p>
+          <a class="btn btn--ink" data-config-link="contactUrl" href="#" hidden style="margin-top:14px">Написать организатору</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <div>
+        <span data-config="name">Наш сервер</span>
+        <small>Неофициальный сервер Minecraft, не связан с Mojang и Microsoft. Картинки на сайте нарисованы специально для него.</small>
+      </div>
+      <nav class="nav" aria-label="Разделы сайта в подвале">
+        <a href="index.html">О сервере</a>
+        <a href="join.html">Как зайти</a>
+        <a href="guide.html">Обучение</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
