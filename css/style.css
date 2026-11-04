@@ -238,13 +238,16 @@ kbd {
 .join-cta p { color: var(--mist); max-width: 52ch; }
 
 /* Адрес и другие значения с кнопкой «Скопировать» */
-.copy-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.copy-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; container-type: inline-size; }
 .copy-value {
   font-family: var(--serif); font-size: 1.3rem; font-weight: 600; letter-spacing: 0.01em;
   font-variant-numeric: lining-nums tabular-nums;
   padding: 0.25em 0.6em; border-radius: 3px;
   background: rgba(246, 236, 211, 0.08); color: var(--cream);
   box-shadow: inset 0 0 0 1px rgba(246, 236, 211, 0.22);
+  /* адрес не переносим на дефисе — его переписывают руками; в узкой колонке шрифт мельчает */
+  white-space: nowrap; min-width: 0; max-width: 100%; overflow-x: auto;
+  font-size: clamp(0.75rem, 5cqi, 1.3rem);
 }
 .copy-btn {
   font: 600 0.92rem/1.2 var(--serif); cursor: pointer;
